@@ -15,21 +15,29 @@
 // }
 
 //  # using if else
-function fizzBuzz(n) {
-  for (let i = 1; i < n; i++) {
-    let output;
-    if (i % 3 === 0 && i % 5 === 0) {
-      output = "fizzbuzz";
-    } else if (i % 3 === 0) {
-      output = "fizz";
-    } else if (i % 5 === 0) {
-      output = "Buzz";
-    } else {
-      output = i;
-    }
+// function fizzBuzz(n) {
+//   for (let i = 1; i < n; i++) {
+//     let output;
+//     if (i % 3 === 0 && i % 5 === 0) {
+//       output = "fizzbuzz";
+//     } else if (i % 3 === 0) {
+//       output = "fizz";
+//     } else if (i % 5 === 0) {
+//       output = "Buzz";
+//     } else {
+//       output = i;
+//     }
 
-    console.log(output);
+//     console.log(output);
+//   }
+// }
+// concise version
+function fizzBuzz(n) {
+  for(let i =0 ; i <= n ; i++){
+    let output ="";
+    if (i % 3 === 0)  output +="fizz" ;
+    if (i % 5 === 0)  output +="Buzz" ;
+    console.log(output || i);    
   }
 }
-
-fizzBuzz(20);
+fizzBuzz(100);

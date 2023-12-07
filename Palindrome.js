@@ -6,29 +6,50 @@
 
 // task 1   reverse the string
 // method 1
-// function reverseStr(str) {
-//   // const str2arr = str.split("")
-//   // const arrReverse = str2arr.reverse()
-//   // const arr2str = arrReverse.join("")
-//   return str.split("").reverse().join("");
-// }
-// method 2 using for loop
 function reverseStr(str) {
-  let newStr = "";
-  for (let i = str.length - 1; i >= 0; i--) {
-    newStr += str[i];
-  }
-  return newStr;
+  return str.split("").reverse().join("");
 }
-
+// method 2 using for loop
+// function reverseStr(str) {
+//   let newStr = "";
+//   for (let i = str.length - 1; i >= 0; i--) {
+//     newStr += str[i];
+//   }
+//   return newStr;
+// }
+// Extract alphanumeric characters from string
+function alphanumerics(str) {
+  let alphaNumericStr = "";
+  for (let i = 0; i <= str.length; i++) {
+    if (
+      (str.charCodeAt(i) >= 65 && str.charCodeAt(i) <= 90) ||
+      (str.charCodeAt(i) >= 97 && str.charCodeAt(i) <= 122) ||
+      (str.charCodeAt(i) >= 48 && str.charCodeAt(i) <= 57)
+    ) {
+      alphaNumericStr += str[i];
+    } else {
+      continue;
+    }
+  }
+  return alphaNumericStr.toLowerCase()
+  
+}
+//  using recursion
+// function reverseStr(str) {
+//   if (str.length<=1){
+//     return str;
+//   }else {
+//     return  reverseStr(str.slice(1)) + str[0]
+//   }
+// }
 function isPalindrome(str) {
-  return str === reverseStr(str) ? true : false;
+  return alphanumerics(str) === reverseStr(alphanumerics(str)) ? true : false;
 }
 let str;
-str = "racecar";
-console.log(isPalindrome(str));
-str = "howdy";
-console.log(isPalindrome(str));
-str = "level";
+// str = "racecar";
+// console.log(isPalindrome(str));
+// str = "howdy";
+// console.log(isPalindrome(str));
+str = "121 A man, a plan, a canal, Panama! 121";
 console.log(isPalindrome(str));
 
